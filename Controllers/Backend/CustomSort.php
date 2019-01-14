@@ -338,9 +338,6 @@ class Shopware_Controllers_Backend_CustomSort extends Shopware_Controllers_Backe
      */
     private function getMediaPath($path)
     {
-        if (version_compare(Shopware()->Config()->get('Version'), '5.1', '<')) {
-            return $path;
-        }
         /** @var Shopware\Bundle\MediaBundle\MediaService $mediaService */
         $mediaService = $this->get('shopware_media.media_service');
 

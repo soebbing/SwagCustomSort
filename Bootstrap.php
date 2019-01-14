@@ -210,38 +210,13 @@ class Shopware_Plugins_Frontend_SwagCustomSort_Bootstrap extends Shopware_Compon
      */
     private function createAttributes()
     {
-        /** @var ModelManager $em */
-        $em = $this->get('models');
+        /** @var \Shopware\Bundle\AttributeBundle\Service\CrudService $crudService */
+        $crudService = $this->get('shopware_attribute.crud_service');
 
-        $em->addAttribute(
-            's_categories_attributes',
-            'swag',
-            'link',
-            'int(11)'
-        );
-        $em->addAttribute(
-            's_categories_attributes',
-            'swag',
-            'show_by_default',
-            'int(1)',
-            true,
-            0
-        );
-        $em->addAttribute(
-            's_categories_attributes',
-            'swag',
-            'deleted_position',
-            'int(11)'
-        );
-
-        $em->addAttribute(
-            's_categories_attributes',
-            'swag',
-            'base_sort',
-            'int(11)'
-        );
-
-        $em->generateAttributeModels(['s_categories_attributes']);
+        $crudService->update('s_categories_attributes', 'swag_link', 'int(11)');
+        $crudService->update('s_categories_attributes', 'swag_show_by_default', 'boolean', [], null, null, 0);
+        $crudService->update('s_categories_attributes', 'swag_deleted_position', 'integer');
+        $crudService->update('s_categories_attributes', 'swag_base_sort', 'integer');
     }
 
     /**

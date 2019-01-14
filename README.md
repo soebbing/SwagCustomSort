@@ -3,7 +3,7 @@
 > Higher versions may work either but were not tested.
 
 ## Description 
-Do you want to comletely customize the sort order of the product listing?
+Do you want to completely customize the sort order of the product listing?
 
 Special promotion products or new products should always be displayed on top?
 
